@@ -1,0 +1,63 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">
+<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="main.css">
+</head>
+
+
+<header>
+<h1>Shipments</h1>
+</header>
+
+
+<h3 class="text-center"> We made $<%= money %> this week</h3>
+
+<body>
+
+<div class ="wrapper">
+<div class="container">
+  <table class="table table-striped table-condensed" border="1">
+    <tr>
+      <th>Destination</th>
+      <th>Shipment</th>
+      <th>Crates</th>
+      <th>Money</th>
+    </tr>
+
+    <%shipments.each do |shipment| %>
+    <tr>
+      <td><%=shipment["Destination"]%></td>
+      <td><%=shipment["Shipment"]%></td>
+      <td><%=shipment["Crates"]%></td>
+      <td>$<%=shipment["Money"]%></td>
+    </tr>
+  <% end%>
+  </table>
+
+<table class="table table-striped table-condensed table-center" border="1">
+  <tr>
+    <th>Pilot</th>
+    <th>Trips</th>
+    <th>Bonus</th>
+
+  <%pilots.each do |pilot| %>
+  <tr>
+    <td><%=pilot["name"]%></td>
+    <td><%=pilot["trips"]%></td>
+    <td>$<%=pilot["money"].to_i%></td>
+  </tr>
+
+  <% end%>
+</table>
+</div>
+</body>
+<footer>
+  <img src="https://media.giphy.com/media/2modwsnpzX93G/giphy.gif">
+  <h4> Employee of the Week!</h4>
+</footer>
+
+</html>
